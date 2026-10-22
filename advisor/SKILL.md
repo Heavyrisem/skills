@@ -35,7 +35,7 @@ prompt에는 다음을 넣는다:
 
 매 호출마다 모델을 명시한다. **반드시 Opus 또는 Fable 중 하나만** 사용한다. Sonnet 등 다른 모델로는 호출하지 않는다.
 
-호출 직전에 `list_subagent_models`를 호출해 현재 사용 가능한 모델을 확인한다. 우선순위는 모델 ID에서 버전 번호가 가장 높은 Opus, 그것이 없으면 버전 번호가 가장 높은 Fable이다. Opus와 Fable이 모두 목록에 없으면 호출하지 않고 사용자에게 보고한다. effort는 `supported_effort_levels` 중 가장 높은 값을 쓴다.
+호출 직전에 `list_subagent_models`를 호출해 현재 사용 가능한 모델을 확인한다. 우선순위는 모델 ID에서 버전 번호가 가장 높은 Opus, 그것이 없으면 버전 번호가 가장 높은 Fable이다. Opus와 Fable이 모두 목록에 없으면 호출하지 않고 사용자에게 보고한다. effort는 모델의 기본값을 쓴다: `supported_effort_levels` 중 프로바이더가 기본값(default)으로 표시한 레벨을 고르고, 그런 레벨이 없으면 effort를 생략한다.
 
 생성이 실패하면(모델을 쓸 수 없음, 모델 지정이 허용되지 않음 등) 다른 계열로 대체하지 않고 사용자에게 보고한다.
 
